@@ -34,7 +34,7 @@ public class PaymentServiceImpl implements PaymentService {
   public StateMachine<PaymentState, PaymentEvent> preAuth(Long paymentId) {
     StateMachine<PaymentState, PaymentEvent> sm = build(paymentId);
 
-    SendEvent(paymentId, sm, PaymentEvent.PRE_AUTH_APPROVED);
+    SendEvent(paymentId, sm, PaymentEvent.PRE_AUTHORIZE);
 
     return sm;
   }
